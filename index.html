@@ -1,15 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>A Sweet Invitation for My Yam</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -85,7 +82,6 @@
       height: 100%;
       overflow: auto;
       background-color: rgba(0,0,0,0.7);
-      display: flex;
       justify-content: center;
       align-items: center;
       animation: fadeIn 0.3s ease-out;
@@ -241,57 +237,44 @@
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 container">
-    <!-- Repeatable Card -->
+    <!-- Existing Cards (1 to 6) -->
     <div class="card">
       <span class="heart-icon">💖</span>
       <p class="card-title">Your Wonderful Aura</p>
-      <div class="hidden card-data"
-           data-message="Yam, even from afar, your presence lights up my day..."
-           data-image="./IMG_0849.jpeg">
-      </div>
+      <div class="hidden card-data" data-message="Yam, even from afar, your presence lights up my day." data-image="./IMG_0849.jpeg"></div>
     </div>
-
     <div class="card">
       <span class="heart-icon">💖</span>
       <p class="card-title">Your Charming Personality</p>
-      <div class="hidden card-data"
-           data-message="Every conversation we have, Yam, makes me smile..."
-           data-image="./IMG_0815.jpeg">
-      </div>
+      <div class="hidden card-data" data-message="Every conversation we have, Yam, makes me smile." data-image="./IMG_0815.jpeg"></div>
     </div>
-
     <div class="card">
       <span class="heart-icon">💖</span>
       <p class="card-title">The Thought of You</p>
-      <div class="hidden card-data"
-           data-message="Thinking about you, Cristina, always makes my day better..."
-           data-image="./IMG_0817.jpeg">
-      </div>
+      <div class="hidden card-data" data-message="Thinking about you, Cristina, always makes my day better." data-image="./IMG_0817.jpeg"></div>
     </div>
-
     <div class="card">
       <span class="heart-icon">💖</span>
       <p class="card-title">A Special Question</p>
-      <div class="hidden card-data"
-           data-message="Would it be okay if I courted you?"
-           data-image="./IMG_0910.png">
-      </div>
+      <div class="hidden card-data" data-message="Would it be okay if I courted you?" data-image="./IMG_0910.png"></div>
     </div>
-
     <div class="card">
       <span class="heart-icon">💖</span>
       <p class="card-title">Hoping to Meet Soon</p>
-      <div class="hidden card-data"
-           data-message="I'm really hoping that soon, we can finally meet in person..."
-           data-image="./IMG_0910.png">
-      </div>
+      <div class="hidden card-data" data-message="I'm really hoping that soon, we can finally meet in person." data-image="./IMG_0910.png"></div>
     </div>
-
     <div class="card">
       <span class="heart-icon">💖</span>
       <p class="card-title">Your Minion's Promise</p>
+      <div class="hidden card-data" data-message="Cristina Cabal, you're truly special to me. Your Minion is here for you, always." data-image="./IMG_0910.png"></div>
+    </div>
+
+    <!-- 💌 Card 7: Honest Promise -->
+    <div class="card">
+      <span class="heart-icon">💖</span>
+      <p class="card-title">My Honest Promise</p>
       <div class="hidden card-data"
-           data-message="Cristina Cabal, you're truly special to me..."
+           data-message="Cristina, sa puso ng Minion mo, may pangakong buo at totoo: Hindi kita sasaktan, hindi kita paiiyakin, at hinding-hindi kita lolokohin. Deserve mo ang isang taong tapat, maalaga, at totoo — at gusto kong maging 'yun para sa'yo. Promise ko 'yan, Yam."
            data-image="./IMG_0910.png">
       </div>
     </div>
@@ -302,7 +285,7 @@
     <button id="openFlowerModalBtn" class="flower-button">💐 Send Yam a Virtual Bouquet! 💐</button>
   </div>
 
-  <!-- Message Modal -->
+  <!-- Modals -->
   <div id="messageModal" class="modal">
     <div class="modal-content">
       <span class="close-button" id="closeMessageModal">&times;</span>
@@ -311,7 +294,6 @@
     </div>
   </div>
 
-  <!-- Flower Modal -->
   <div id="flowerModal" class="modal">
     <div class="modal-content">
       <span class="close-button" id="closeFlowerModal">&times;</span>
@@ -329,6 +311,7 @@
     </div>
   </div>
 
+  <!-- JavaScript -->
   <script>
     const messageModal = document.getElementById("messageModal");
     const modalMessage = document.getElementById("modalMessage");
@@ -368,7 +351,7 @@
       if (event.target == flowerModal) flowerModal.style.display = "none";
     };
 
-    // Heart Particle Animation
+    // Heart particles
     function createHeartParticle() {
       const heart = document.createElement("span");
       heart.classList.add("heart-particle");
@@ -382,7 +365,7 @@
     setInterval(createHeartParticle, 300);
     for (let i = 0; i < 10; i++) setTimeout(createHeartParticle, i * 100);
 
-    // Scroll animation for cards
+    // Scroll animation
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
